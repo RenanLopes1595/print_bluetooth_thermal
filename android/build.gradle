@@ -41,6 +41,7 @@ android {
     }
     defaultConfig {
         minSdkVersion 16
+        multiDexEnabled true
     }
     lintOptions {
         disable 'InvalidPackage'
@@ -51,4 +52,5 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.0'
     implementation 'androidx.activity:activity-ktx:1.4.0'
+    implementation "androidx.multidex:multidex:2.0.1"
 }
