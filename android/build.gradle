@@ -27,6 +27,14 @@ apply plugin: 'kotlin-android'
 android {
     compileSdkVersion 31
 
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+
+        // Flag to enable support for the new language APIs
+        coreLibraryDesugaringEnabled true
+    }
+
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
     }
