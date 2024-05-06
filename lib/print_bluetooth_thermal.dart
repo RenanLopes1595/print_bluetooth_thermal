@@ -42,6 +42,19 @@ class PrintBluetoothThermal {
     return bluetoothState;
   }
 
+    /// Get list of all paired bluetooth devices
+  static Future<List?> get getBluetooths async {
+    List? items = [];
+    try {
+      final List? result = await _channel.invokeMethod('bluetothLinked');
+      items = result;
+    } on PlatformException catch (e) {
+      print("Bluetooth paired failure: '${e.message}'.");
+    }
+
+    return items;
+  }
+
   ///Android: Return all paired bluetooth on the device IOS: Return nearby bluetooths
   static Future<List<BluetoothInfo>> get pairedBluetooths async {
     //bluetooth vinculados
